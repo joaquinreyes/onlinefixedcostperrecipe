@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Fixed Costs for Recipe Cost Calculator</title>
+    <!-- Link main css -->
+    <link rel="stylesheet" href="main.css">
+    <!-- link main js -->
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- header div with logo image on the left side-->
+    <div class="header">
+        <img src="Assets/logo mozzo.menu.png" alt="logo" id="logo">
+    </div>
+
+    <div class="title">
+        <h1>Restaurant Break-Even Point Calculator</h1>
+        <p class="subtitle">Get to know when you start making a profit with your restaurant.</p>
+    </div>
+
+
+    <!-- form with 4 inputs: monthly fixed costs, monthly variable costs, monthly revenue costs, units sold monthly-->
+    <div class="div-form">
+        <form action="index.html" method="post">
+            <div class="form">
+                
+                    <div class="left-column">
+                        <div id="monthly-costs">
+                        <label for="fixedCosts">Monthly Fixed Costs</label>
+                        <input type="number" name="fixedCosts" id="fixedCosts"
+                            placeholder="Enter your monthly fixed costs" required>
+                        </div>
+
+                        <div id="monthly-variable">
+                        <label for="variableCosts">Monthly Variable Costs</label>
+                        <input type="number" name="variableCosts" id="variableCosts"
+                            placeholder="Enter your monthly variable costs" required>
+                    </div>
+                    <div class="right-column">
+                        <div id="monthly-revenue">
+                        <label for="revenue">Monthly Revenue</label>
+                        <input type="number" name="revenue" id="revenue" placeholder="Enter your monthly revenue"
+                            required>
+                        </div>
+                        <div id="units-sold">
+                        <label for="units">Units Sold Monthly</label>
+                        <input type="number" name="units" id="units" placeholder="Enter your units sold monthly"
+                            required>
+                            </div>
+
+                    </div>
+                    <div class="submit">
+                        <button type="submit" id="submit">Calculate</button>
+                </div>
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
