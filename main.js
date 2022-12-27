@@ -1,72 +1,23 @@
-//write a school class with properties name, level (primary, middle, high), and numberOfStudents
-class School {
-    constructor(name, level, numberOfStudents) {
-        this._name = name;
-        this._level = level;
-        this._numberOfStudents = numberOfStudents;
-    }
-    get name() {
-        return this._name;
-    }
-    get level() {
-        return this._level;
-    }
-    get numberOfStudents() {
-        return this._numberOfStudents;
-    }
-    set numberOfStudents(newNumberOfStudents) {
-        if (typeof newNumberOfStudents === 'number') {
-        this._numberOfStudents = newNumberOfStudents;
-        } else {
-        console.log('Invalid input: numberOfStudents must be set to a Number.');
-        }
-    }
-    quickFacts() {
-        console.log(`${this.name} educates ${this.numberOfStudents} students at the ${this.level} school level.`);
-    }
-    static pickSubstituteTeacher(substituteTeachers) {
-        const randomIndex = Math.floor(Math.random() * substituteTeachers.length);
-        return substituteTeachers[randomIndex];
-    }
-    }
+const formContainer = document.querySelector('.form-container');
+const form = formContainer.querySelector('form');
+const fixedCostInput = form.querySelector('#fixed-cost');
+const monthlyRevenueInput = form.querySelector('#monthly-revenue');
+const monthlyVariableInput = form.querySelector('#monthly-variable');
+const unitsSoldInput = form.querySelector('#units-sold');
+const submitButton = form.querySelector('#submit-form');
 
-//write a primary school class that extends school and adds a pickup policy property
-class PrimarySchool extends School {
-    constructor(name, numberOfStudents, pickupPolicy) {
-        super(name, 'primary', numberOfStudents);
-        this._pickupPolicy = pickupPolicy;
-    }
-    get pickupPolicy() {
-        return this._pickupPolicy;
-    }
-}
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const fixedCost = parseInt(fixedCostInput.value);
+    const monthlyRevenue = parseInt(monthlyRevenueInput.value);
+    const monthlyVariable = parseInt(monthlyVariableInput.value);
+    const unitsSold = parseInt(unitsSoldInput.value);
+    const unitaryResult = Math.round(fixedCost / ((monthlyRevenue / unitsSold) - (monthlyVariable / unitsSold)));
+    const revenueResult = Math.round(monthlyVariable + fixedCost);
+    // Replace HTML elements with the unitaryResult and revenueResult variables here
+    const unitaryResultElement = document.querySelector('#units');
+    unitaryResultElement.innerHTML = unitaryResult;
+    const revenueResultElement = document.querySelector('#revenue');
+    revenueResultElement.innerHTML = '$' + revenueResult;
 
-// test primary school class
-const lorraineHansbury = new PrimarySchool('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.');
-lorraineHansbury.quickFacts();
-PrimarySchool.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']);
-console.log(lorraineHansbury.pickupPolicy);
-
-//write a middle school class that extends school
-class MiddleSchool extends School {
-    constructor(name, numberOfStudents) {
-        super(name, 'middle', numberOfStudents);
-    }
-}
-console.log(new MiddleSchool('Middle School', 1000));
-
-//write a high school class that extends school and adds a sports teams property
-class HighSchool extends School {
-    constructor(name, numberOfStudents, sportsTeams) {
-        super(name, 'high', numberOfStudents);
-        this._sportsTeams = sportsTeams;
-    }
-    get sportsTeams() {
-        return this._sportsTeams;
-    }
-}
-
-//test high school class
-const alSmith = new HighSchool('Al E. Smith', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field']);
-console.log(alSmith.sportsTeams);
-console.log(alSmith);
+});
