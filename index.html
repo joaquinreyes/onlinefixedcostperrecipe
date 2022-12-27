@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="main.css">
     <!-- link main js -->
     <script src="main.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -26,42 +31,47 @@
 
 
     <!-- form with 4 inputs: monthly fixed costs, monthly variable costs, monthly revenue costs, units sold monthly-->
-    <div class="div-form">
-        <form action="index.html" method="post">
-            <div class="form">
-                
-                    <div class="left-column">
-                        <div id="monthly-costs">
-                        <label for="fixedCosts">Monthly Fixed Costs</label>
-                        <input type="number" name="fixedCosts" id="fixedCosts"
-                            placeholder="Enter your monthly fixed costs" required>
-                        </div>
+    <div class="form-container">
+        <form>
+            <div class="left">
+                <label for="first">Monthly Fixed Costs</label>
+                <input type="text" id="first" name="first">
 
-                        <div id="monthly-variable">
-                        <label for="variableCosts">Monthly Variable Costs</label>
-                        <input type="number" name="variableCosts" id="variableCosts"
-                            placeholder="Enter your monthly variable costs" required>
-                    </div>
-                    <div class="right-column">
-                        <div id="monthly-revenue">
-                        <label for="revenue">Monthly Revenue</label>
-                        <input type="number" name="revenue" id="revenue" placeholder="Enter your monthly revenue"
-                            required>
-                        </div>
-                        <div id="units-sold">
-                        <label for="units">Units Sold Monthly</label>
-                        <input type="number" name="units" id="units" placeholder="Enter your units sold monthly"
-                            required>
-                            </div>
+                <label for="second">Monthly Revenue</label>
+                <input type="text" id="second" name="second">
+            </div>
+            <div class="right">
+                <label for="third">Monthly Variable Cost</label>
+                <input type="text" id="third" name="third">
 
-                    </div>
-                    <div class="submit">
-                        <button type="submit" id="submit">Calculate</button>
-                </div>
+                <label for="fourth">Units Sold Monthly</label>
+                <input type="text" id="fourth" name="fourth">
+            </div>
+            <button id="submit-form" value="Calculate" type="submit">Calculate</button>
         </form>
+
     </div>
 
 
+    <!-- div with the results -->
+
+    <div class="results-container">
+        <h2>Break-Even Point</h2>
+        <!-- Create 2 divs that are going to be paralel each one with text inside with the resulting amount -->
+        <div class="results-boxes">
+            <div class="result-1">
+                <h2>Unitary</h2>
+                <h3 id="units-sold">200</h3>
+                <p>Units needed to be sold monthly in order to start making a profit.</p>
+
+            </div>
+            <div class="result-2">
+                <h2>Revenue</h2>
+                <h3 id="revenue">$2000</h3>
+                <p>Revenue needed to be reached monthly in order to start making a profit.</p>
+            </div>
+        </div>
+    </div>
 
 
 
