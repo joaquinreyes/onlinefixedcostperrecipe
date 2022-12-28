@@ -6,6 +6,7 @@ const monthlyVariableInput = form.querySelector('#monthly-variable');
 const unitsSoldInput = form.querySelector('#units-sold');
 const submitButton = form.querySelector('#submit-form');
 
+
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
     const fixedCost = parseInt(fixedCostInput.value);
@@ -14,10 +15,11 @@ submitButton.addEventListener('click', (event) => {
     const unitsSold = parseInt(unitsSoldInput.value);
     const unitaryResult = Math.round(fixedCost / ((monthlyRevenue / unitsSold) - (monthlyVariable / unitsSold)));
     const revenueResult = Math.round(monthlyVariable + fixedCost);
+    const dottedRevenueResult = revenueResult.toLocaleString();
     // Replace HTML elements with the unitaryResult and revenueResult variables here
     const unitaryResultElement = document.querySelector('#units');
     unitaryResultElement.innerHTML = unitaryResult;
     const revenueResultElement = document.querySelector('#revenue');
-    revenueResultElement.innerHTML = '$' + revenueResult;
+    revenueResultElement.innerHTML = '$' + dottedRevenueResult;
 
 });
