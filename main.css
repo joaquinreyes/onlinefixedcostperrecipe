@@ -1,4 +1,55 @@
 /* //set background of the page */
+@media only screen and (max-width: 600px) {
+
+    /* adjust the width of the form container */
+    .left,
+    .right {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: 15px;
+    }
+
+    /* adjust the width and margin of the inputs */
+    form input {
+        width: auto;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    /* adjust the width, height, and margin of the submit button */
+    #submit-form {
+        margin-right: 50%;
+        
+    }
+
+    /* adjust the width and gap of the results boxes */
+    .results-boxes {
+        width: 100%;
+        gap: 20px;
+    }
+
+    /* adjust the width and height of the individual results boxes */
+    .results-boxes>div {
+        width: calc(100% - 40px);
+        height: 200px;
+    }
+
+    #submit-form {
+/*     resize button to mobile
+ */
+    width: 80%;
+    height: 40px;
+    margin: 20px auto;
+    }
+
+    html {
+        font-size: 14px;
+      }
+      
+
+
+}
 body {
     /* background image from assets*/
     background-image: url(Assets/background.png);
@@ -21,24 +72,24 @@ h1 {
     font-family: 'Kumbh Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 60px;
+    font-size: 3rem;
+    line-height: 3.75rem;
 }
 
 h2 {
     font-family: 'Kumbh Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
-    line-height: 60px;
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 .subtitle {
     font-family: 'Kumbh Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     display: flex;
     align-items: center;
     text-align: center;
@@ -49,13 +100,11 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
     text-align: center;
-    width: 728px;
+    width: auto;
     margin: auto;
-    /* center the content within the title element */
 }
-
 
 .title h1 {
     margin-bottom: 0%;
@@ -156,7 +205,7 @@ form input {
     text-align: center;
     color: #223354;
     margin: auto;
-    padding-top: 15px;
+    padding: 30px;
 }
 
 .results-boxes>.result-1 h3,
@@ -166,7 +215,7 @@ form input {
     font-family: 'Kumbh Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3rem;
     text-align: center;
     margin: auto;
 }
@@ -184,8 +233,7 @@ form input {
 }
 
 
-
-
 .results-boxes>.result-2 {
     background: linear-gradient(0deg, #DBECCB, #DBECCB), #FFFFFF;
 }
+
